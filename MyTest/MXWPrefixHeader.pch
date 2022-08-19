@@ -1,0 +1,24 @@
+//
+//  MXWPrefixHeader.pch
+//  MyTest
+//
+//  Created by 明先伟 on 2022/8/18.
+//
+
+#ifndef MXWPrefixHeader_pch
+#define MXWPrefixHeader_pch
+
+
+
+/* 定义屏幕宽度和高度*/
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+/* 定义RGBCOLOR*/
+#define ColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
+
+
+
+#endif /* MXWPrefixHeader_pch */
