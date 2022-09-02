@@ -103,6 +103,7 @@ static NSString * const reuseIdentifier = @"Cell";
     MXWItemModel * model = self.dataList[indexPath.item];
     UIViewController * VC = [self getViewControllerFromSB:@"Main" withID:model.VCID];
 
+    /** 手势识别的是模态出现 其他的为压栈 */
     if ([VC isKindOfClass:[MXWGuestureUnlockVC class]]) {
         VC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self.navigationController presentViewController:VC animated:YES completion:^{}];
