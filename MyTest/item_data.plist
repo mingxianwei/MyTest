@@ -34,5 +34,13 @@
 		<key>imageName</key>
 		<string>pieView</string>
 	</dict>
+	<dict>
+		<key>VCID</key>
+		<string>TransVC</string>
+		<key>tittle</key>
+		<string>系统转场动画</string>
+		<key>imageName</key>
+		<string>trans_view</string>
+	</dict>
 </array>
 </plist>
