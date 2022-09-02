@@ -19,12 +19,13 @@
 
 @implementation MXWMainCell
 
-
+/** set 方法 */
 - (void)setModel:(MXWItemModel *)model {
     _model = model;
     self.myimageView.image = [UIImage imageNamed:model.imageName];
     self.tittleLable.text = model.tittle;
     self.backgroundColor = [UIColor clearColor];
+    
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = 10;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;

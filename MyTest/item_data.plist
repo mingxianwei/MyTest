@@ -6,7 +6,7 @@
 		<key>VCID</key>
 		<string>colock</string>
 		<key>tittle</key>
-		<string>时钟</string>
+		<string>CADisplayLink时钟</string>
 		<key>imageName</key>
 		<string>colock</string>
 	</dict>
@@ -25,6 +25,14 @@
 		<string>手势解锁</string>
 		<key>imageName</key>
 		<string>gesture_unlock</string>
+	</dict>
+	<dict>
+		<key>VCID</key>
+		<string>PieViewVC</string>
+		<key>tittle</key>
+		<string>饼状图/柱状图随机色</string>
+		<key>imageName</key>
+		<string>pieView</string>
 	</dict>
 </array>
 </plist>

@@ -267,6 +267,66 @@
             </objects>
             <point key="canvasLocation" x="1511.5942028985507" y="1101.358695652174"/>
         </scene>
+        <!--Pie View Controller-->
+        <scene sceneID="Tj2-FX-lVU">
+            <objects>
+                <viewController storyboardIdentifier="PieViewVC" id="oRj-DY-goA" customClass="MXWPieViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8dm-ay-c99">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63V-Vk-6Sq" customClass="MXWPieView">
+                                <rect key="frame" x="49" y="90" width="312" height="203"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="203" id="jAg-K3-lAN"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="饼状图随机色" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqR-7C-bAO">
+                                <rect key="frame" x="155" y="304" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Tya-fQ-LGj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvc-Se-SPp" customClass="MXWColumnarView">
+                                <rect key="frame" x="50" y="375" width="314" height="261"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="柱状图随机色" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usi-r9-1qB">
+                                <rect key="frame" x="155" y="656" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D4x-Tw-u7r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gqR-7C-bAO" firstAttribute="centerX" secondItem="8dm-ay-c99" secondAttribute="centerX" id="42l-0g-lmT"/>
+                            <constraint firstItem="Usi-r9-1qB" firstAttribute="centerX" secondItem="8dm-ay-c99" secondAttribute="centerX" id="4zb-65-eRt"/>
+                            <constraint firstItem="D4x-Tw-u7r" firstAttribute="trailing" secondItem="yvc-Se-SPp" secondAttribute="trailing" constant="50" id="5zZ-M5-Y11"/>
+                            <constraint firstItem="gqR-7C-bAO" firstAttribute="top" secondItem="63V-Vk-6Sq" secondAttribute="bottom" constant="11" id="8Hl-VU-Jzm"/>
+                            <constraint firstItem="63V-Vk-6Sq" firstAttribute="leading" secondItem="D4x-Tw-u7r" secondAttribute="leading" constant="49" id="SPb-GL-9vM"/>
+                            <constraint firstItem="D4x-Tw-u7r" firstAttribute="bottom" secondItem="yvc-Se-SPp" secondAttribute="bottom" constant="100" id="TeA-00-eAb"/>
+                            <constraint firstItem="yvc-Se-SPp" firstAttribute="top" secondItem="gqR-7C-bAO" secondAttribute="bottom" constant="50" id="gfy-W3-2Vk"/>
+                            <constraint firstItem="D4x-Tw-u7r" firstAttribute="trailing" secondItem="63V-Vk-6Sq" secondAttribute="trailing" constant="53" id="goJ-uH-4vQ"/>
+                            <constraint firstItem="yvc-Se-SPp" firstAttribute="leading" secondItem="D4x-Tw-u7r" secondAttribute="leading" constant="50" id="kSb-es-gDW"/>
+                            <constraint firstItem="63V-Vk-6Sq" firstAttribute="top" secondItem="8dm-ay-c99" secondAttribute="top" constant="90" id="pgk-kd-oUm"/>
+                            <constraint firstItem="Usi-r9-1qB" firstAttribute="top" secondItem="yvc-Se-SPp" secondAttribute="bottom" constant="20" id="rg8-DD-oVB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="columView" destination="yvc-Se-SPp" id="yso-7Z-YOZ"/>
+                        <outlet property="pieView" destination="63V-Vk-6Sq" id="eZe-x0-6ls"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxc-wc-fDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442.0289855072465" y="2052.717391304348"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="k23-A8-mwn">
             <objects>

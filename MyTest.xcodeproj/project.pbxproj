@@ -15,9 +15,13 @@
 		853229FF2899382A008FA82E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853229FD2899382A008FA82E /* LaunchScreen.storyboard */; };
 		85322A022899382A008FA82E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85322A012899382A008FA82E /* main.m */; };
 		85322A0D28993B0F008FA82E /* MyMainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85322A0C28993B0F008FA82E /* MyMainCollectionViewController.m */; };
+		853B13AB28C120EB00C67E10 /* MXWColumnarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 853B13AA28C120EB00C67E10 /* MXWColumnarView.m */; };
 		8571A7F6289C0AE600C01C68 /* MXWPaintBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */; };
 		8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F8289C0B3A00C01C68 /* MXWPaintBoardView.m */; };
 		8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7FB289C188400C01C68 /* MXWBezierPath.m */; };
+		85A88BCD28C10B8000F195F9 /* MXWPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88BCC28C10B8000F195F9 /* MXWPieView.m */; };
+		85A88BD028C10C3800F195F9 /* MXWPieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88BCF28C10C3800F195F9 /* MXWPieModel.m */; };
+		85A88BD328C1172200F195F9 /* MXWPieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A88BD228C1172200F195F9 /* MXWPieViewController.m */; };
 		85B1772C28AD10F100BA9554 /* MXWMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B1772B28AD10F100BA9554 /* MXWMainCell.m */; };
 		85B1772F28AD14DD00BA9554 /* MXWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B1772E28AD14DD00BA9554 /* MXWItemModel.m */; };
 		85B1773128AD1E4500BA9554 /* item_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B1773028AD1E4500BA9554 /* item_data.plist */; };
@@ -41,6 +45,8 @@
 		85322A012899382A008FA82E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85322A0B28993B0F008FA82E /* MyMainCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMainCollectionViewController.h; sourceTree = "<group>"; };
 		85322A0C28993B0F008FA82E /* MyMainCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMainCollectionViewController.m; sourceTree = "<group>"; };
+		853B13A928C120EB00C67E10 /* MXWColumnarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWColumnarView.h; sourceTree = "<group>"; };
+		853B13AA28C120EB00C67E10 /* MXWColumnarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWColumnarView.m; sourceTree = "<group>"; };
 		8557E39B28AE22E700E03FC2 /* MXWPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPrefixHeader.pch; sourceTree = "<group>"; };
 		8571A7F4289C0AE600C01C68 /* MXWPaintBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPaintBoardViewController.h; sourceTree = "<group>"; };
 		8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPaintBoardViewController.m; sourceTree = "<group>"; };
@@ -48,6 +54,12 @@
 		8571A7F8289C0B3A00C01C68 /* MXWPaintBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPaintBoardView.m; sourceTree = "<group>"; };
 		8571A7FA289C188400C01C68 /* MXWBezierPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWBezierPath.h; sourceTree = "<group>"; };
 		8571A7FB289C188400C01C68 /* MXWBezierPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWBezierPath.m; sourceTree = "<group>"; };
+		85A88BCB28C10B8000F195F9 /* MXWPieView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPieView.h; sourceTree = "<group>"; };
+		85A88BCC28C10B8000F195F9 /* MXWPieView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPieView.m; sourceTree = "<group>"; };
+		85A88BCE28C10C3800F195F9 /* MXWPieModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPieModel.h; sourceTree = "<group>"; };
+		85A88BCF28C10C3800F195F9 /* MXWPieModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPieModel.m; sourceTree = "<group>"; };
+		85A88BD128C1172200F195F9 /* MXWPieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPieViewController.h; sourceTree = "<group>"; };
+		85A88BD228C1172200F195F9 /* MXWPieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPieViewController.m; sourceTree = "<group>"; };
 		85B1772A28AD10F100BA9554 /* MXWMainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWMainCell.h; sourceTree = "<group>"; };
 		85B1772B28AD10F100BA9554 /* MXWMainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWMainCell.m; sourceTree = "<group>"; };
 		85B1772D28AD14DD00BA9554 /* MXWItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWItemModel.h; sourceTree = "<group>"; };
@@ -91,6 +103,7 @@
 		853229EE28993827008FA82E /* MyTest */ = {
 			isa = PBXGroup;
 			children = (
+				85A88BCA28C10B4C00F195F9 /* PieChat */,
 				85B1773B28AE053C00BA9554 /* signalInstance */,
 				85B1773A28AE04FE00BA9554 /* Main */,
 				85B1773528AD552200BA9554 /* GuestureUnlock */,
@@ -131,6 +144,21 @@
 				8571A7FB289C188400C01C68 /* MXWBezierPath.m */,
 			);
 			path = PaintBoard;
+			sourceTree = "<group>";
+		};
+		85A88BCA28C10B4C00F195F9 /* PieChat */ = {
+			isa = PBXGroup;
+			children = (
+				85A88BCE28C10C3800F195F9 /* MXWPieModel.h */,
+				85A88BCF28C10C3800F195F9 /* MXWPieModel.m */,
+				85A88BCB28C10B8000F195F9 /* MXWPieView.h */,
+				85A88BCC28C10B8000F195F9 /* MXWPieView.m */,
+				853B13A928C120EB00C67E10 /* MXWColumnarView.h */,
+				853B13AA28C120EB00C67E10 /* MXWColumnarView.m */,
+				85A88BD128C1172200F195F9 /* MXWPieViewController.h */,
+				85A88BD228C1172200F195F9 /* MXWPieViewController.m */,
+			);
+			path = PieChat;
 			sourceTree = "<group>";
 		};
 		85B1773528AD552200BA9554 /* GuestureUnlock */ = {
@@ -240,13 +268,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				853229F128993827008FA82E /* AppDelegate.m in Sources */,
+				85A88BD028C10C3800F195F9 /* MXWPieModel.m in Sources */,
 				85B1772C28AD10F100BA9554 /* MXWMainCell.m in Sources */,
 				8571A7F6289C0AE600C01C68 /* MXWPaintBoardViewController.m in Sources */,
 				85B1772F28AD14DD00BA9554 /* MXWItemModel.m in Sources */,
 				8513B16128A0D02600ACD2DF /* MXWSignalInstance.m in Sources */,
 				85322A022899382A008FA82E /* main.m in Sources */,
+				85A88BCD28C10B8000F195F9 /* MXWPieView.m in Sources */,
 				8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */,
 				8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */,
+				85A88BD328C1172200F195F9 /* MXWPieViewController.m in Sources */,
+				853B13AB28C120EB00C67E10 /* MXWColumnarView.m in Sources */,
 				85322A0D28993B0F008FA82E /* MyMainCollectionViewController.m in Sources */,
 				85B1773428AD550D00BA9554 /* MXWGuestureUnlockVC.m in Sources */,
 				853229F428993827008FA82E /* SceneDelegate.m in Sources */,

@@ -37,7 +37,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-
+#pragma mark - === LifeCircle ===
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -48,13 +48,10 @@ static NSString * const reuseIdentifier = @"Cell";
    //  Register cell classes
    // [self.collectionView registerClass:[MXWMainCell class] forCellWithReuseIdentifier:reuseIdentifier];
     /**
-     强调注意事项： 当使用storyBoard 创建cell 事后则不需要注册，如果注册会导致自定义类型失效。
-     
+     强调注意事项： 当使用storyBoard 创建cell则不需要注册，如果注册会导致自定义类型失效。
      如果是通过xib创建 则需要使用xib来注册
-     
      如果是自定义手写自定义类 则需要使用自定义类来注册。
      */
-    
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width/2.0-5;
     self.flowLayout.itemSize = CGSizeMake(width, width);
@@ -75,8 +72,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 
-
-
 #pragma mark - <UICollectionViewDataSource>
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return  1;
@@ -93,27 +88,21 @@ static NSString * const reuseIdentifier = @"Cell";
     MXWMainCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     MXWItemModel * model = self.dataList[indexPath.item];
     cell.model = model;
-    
     return  cell;
 }
 
 
 #pragma mark  - <UICollectionViewDelegate>
 
-
-// Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
 }
 
-
+/** item点击方法 */
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     MXWItemModel * model = self.dataList[indexPath.item];
     UIViewController * VC = [self getViewControllerFromSB:@"Main" withID:model.VCID];
-    
-//
-    
-    
+
     if ([VC isKindOfClass:[MXWGuestureUnlockVC class]]) {
         VC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self.navigationController presentViewController:VC animated:YES completion:^{}];
@@ -124,10 +113,9 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-
+/** 从StoryBoard 中根据 标识符加载控制器 */
 -(UIViewController *)getViewControllerFromSB:(NSString *)sbName withID:(NSString *)controllerID {
     UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:sbName bundle:[NSBundle mainBundle]];
-    
     UIViewController * controller = [storyBoard instantiateViewControllerWithIdentifier:controllerID];
     return  controller;
 }
