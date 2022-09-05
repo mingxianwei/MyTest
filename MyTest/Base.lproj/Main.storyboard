@@ -148,8 +148,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-nr-ZWV">
                                         <rect key="frame" x="0.0" y="50" width="138" height="70"/>
                                         <color key="backgroundColor" red="0.34952514790173839" green="1" blue="0.33133459838617296" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="grenBtnClick:" destination="3pO-SV-UYS" eventType="touchUpInside" id="dgq-OT-YNI"/>
                                         </connections>
@@ -157,17 +156,15 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr0-nB-Hfv">
                                         <rect key="frame" x="276" y="50" width="138" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.47925493130872199" blue="0.37105768369890557" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="orangeBtnClick:" destination="3pO-SV-UYS" eventType="touchUpInside" id="OSW-JY-x5A"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWy-sX-1dB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWy-sX-1dB">
                                         <rect key="frame" x="138" y="50" width="138" height="70"/>
                                         <color key="backgroundColor" red="0.26637701357936505" green="0.39897134073740637" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="blueBtnClick:" destination="3pO-SV-UYS" eventType="touchUpInside" id="NNB-YN-EyX"/>
                                         </connections>
@@ -338,6 +335,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jiv-ha-DM7" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Ow-bT-1Xp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
