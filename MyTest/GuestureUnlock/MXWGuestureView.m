@@ -15,25 +15,27 @@
 #define KMargein  30
 
 
+typedef NS_ENUM(NSInteger,kPassWordCheckType) {
+    kPassWordCheckDefault = 0,  //默认状态，没有验证
+    kPassWordCheckRight = 1,    // 密码正确
+    kPassWordCheckWrong = 2     // 密码错误
+};
+
+
+
 @interface MXWGuestureView ()
 
 @property (nonatomic, strong) NSMutableArray *butArry;
 @property (nonatomic, assign) CGPoint currPoint;
-// 标记当前的 状态 默认是0  密码正确 为1  密码错误为2
-@property (nonatomic, assign) NSInteger flage;
+// 标记当前的 状态 默认是0  密码正确 为 1  密码错误为 2
+@property (nonatomic, assign) kPassWordCheckType flage;
 
 @end
 
 
 @implementation MXWGuestureView
 
-#pragma mark - === 懒加载 ===
--(NSMutableArray *)butArry {
-    if (_butArry == nil) {
-        _butArry = [NSMutableArray arrayWithCapacity:KButtonNumber];
-    }
-    return _butArry;
-}
+
 
 #pragma mark - === 重绘 ===
 - (void)drawRect:(CGRect)rect {
@@ -64,14 +66,19 @@
     
     [path setLineWidth:15];
     
-    
-    
-   
     [path stroke];
   
 }
 
+#pragma mark - === 懒加载 ===
+-(NSMutableArray *)butArry {
+    if (_butArry == nil) {
+        _butArry = [NSMutableArray arrayWithCapacity:KButtonNumber];
+    }
+    return _butArry;
+}
 
+#pragma mark - === 初始化 ===
 /**
  当View 初始化时候应该给他创建按钮
  */
@@ -79,7 +86,7 @@
     [super awakeFromNib];
     
     /**
-     创建按钮  但是初始化时候 还无法设置frame，所以需要在 layoutsubView 的方式来设置frame
+     创建按钮  但是初始化时候 这个View 还没有Frame 所以无法 设置子控件frame，所以需要在 layoutsubView 的方式来设置frame
      */
     for (int i = 0; i<KButtonNumber; i++) {
         UIButton * button = [[UIButton alloc] init];
@@ -135,7 +142,6 @@
     
     //记录当前触摸点
     self.currPoint = point;
-      
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (CGRectContainsPoint(obj.frame, point)) {
             UIButton * button = (UIButton *)obj;
@@ -154,7 +160,6 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
     NSString * password = [self caculatePassword];
     if(self.ChackPasswordBlock){
         BOOL result = self.ChackPasswordBlock(password);
@@ -167,9 +172,10 @@
     
 }
 
-#pragma mark - === 清空状态 ===
+#pragma mark - === 成功/失败 之时 展示状态后清空状态 ===
+
+/** 清空状态 */
 - (void)clearStatus {
-    
     __weak typeof(self) weakSelf = self;
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIButton * button = (UIButton *)obj;
@@ -185,21 +191,21 @@
     }
 }
 
-
+/** 成功之后重置状态 和回调 */
 - (void)correctStatus {
     self.userInteractionEnabled = NO;
     self.flage = 1;
     [self setNeedsDisplay];
     
-    __weak typeof(self) weakSelf = self;
+    //__weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [weakSelf clearStatus];
-        weakSelf.userInteractionEnabled = YES;
+        [self clearStatus];
+        self.userInteractionEnabled = YES;
     });
 }
 
 
-
+/** 失败时候 重置状态 */
 - (void)errorStatus {
     self.userInteractionEnabled = NO;
     self.flage = 2;
@@ -212,10 +218,10 @@
     }];
     [self setNeedsDisplay];
     
-    __weak typeof(self) weakSelf = self;
+   // __weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [weakSelf clearStatus];
-        weakSelf.userInteractionEnabled = YES;
+        [self clearStatus];
+        self.userInteractionEnabled = YES;
     });
 }
 
