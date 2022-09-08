@@ -47,7 +47,6 @@
     self.myImageView.image = self.imageArray[self.currentIndex];
 }
 
-
 - (IBAction)imageChange:(UISwipeGestureRecognizer*)sender {
     
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
@@ -68,9 +67,14 @@
     
 }
 
+
 /** 点击按钮之后将按钮tittle 设置为动销类型 */
 - (IBAction)transTypeSelected:(UIButton *)sender {
     self.transType = sender.titleLabel.text;
 }
 
+
+-(void)dealloc {
+    NSLog(@"我被释放了%@",[self description]);
+}
 @end

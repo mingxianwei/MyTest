@@ -42,5 +42,13 @@
 		<key>imageName</key>
 		<string>trans_view</string>
 	</dict>
+	<dict>
+		<key>VCID</key>
+		<string>MXWAnmationVC</string>
+		<key>tittle</key>
+		<string>CoreAnmation 核心动画</string>
+		<key>imageName</key>
+		<string>MXWAnmationVC</string>
+	</dict>
 </array>
 </plist>

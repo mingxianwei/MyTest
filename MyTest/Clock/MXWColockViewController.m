@@ -15,6 +15,8 @@
 
 @property (nonatomic,weak) CALayer * hourLayer;
 
+@property (nonatomic, strong) CADisplayLink *myLink;
+
 
 
 @end
@@ -73,12 +75,21 @@
     self.secondLayer = secondLayer;
     self.minuteLayer = minuteLayer;
     
-    // 将屏幕刷新
-    CADisplayLink * disPlayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(flushLayer)];
-    [disPlayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
 }
 
+/** 定时器应当在视图出现时候赋值 并且在视图消失时候 调用invalidate 方法让其失效 不然造成内存泄漏。控制器无法被释放 */
+-(void)viewWillAppear:(BOOL)animated {
+    // 将屏幕刷新
+    self.myLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(flushLayer)];
+    [self.myLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
 
+/** 每次 视图消失时候 失效定时器 */
+-(void)viewDidDisappear:(BOOL)animated {
+    [self.myLink invalidate];
+    self.myLink = nil;
+}
 
 - (void)flushLayer{
     
@@ -100,15 +111,8 @@
 }
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)dealloc {
+    NSLog(@"我被释放了%@",[self description]);
 }
-*/
 
 @end
