@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311547D65692AF6E2AB865C3 /* libPods-MyTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFB37B1541FCA48BBC5C4C6 /* libPods-MyTest.a */; };
 		8513B16128A0D02600ACD2DF /* MXWSignalInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8513B16028A0D02600ACD2DF /* MXWSignalInstance.m */; };
 		853229F128993827008FA82E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 853229F028993827008FA82E /* AppDelegate.m */; };
 		853229F428993827008FA82E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 853229F328993827008FA82E /* SceneDelegate.m */; };
@@ -19,6 +20,12 @@
 		853B13AE28C1F6E800C67E10 /* MXWTransVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 853B13AD28C1F6E800C67E10 /* MXWTransVC.m */; };
 		8556BBC728C9A68C0081EA46 /* MXWAnmationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBC628C9A68C0081EA46 /* MXWAnmationVC.m */; };
 		8556BBCC28CAE6D80081EA46 /* MXWCollecViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBCB28CAE6D80081EA46 /* MXWCollecViewLayout.m */; };
+		8556BBD028CB12A40081EA46 /* MXWCusomTranTVCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBCF28CB12A40081EA46 /* MXWCusomTranTVCTableViewController.m */; };
+		8556BBD328CB12E30081EA46 /* MXWTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBD228CB12E30081EA46 /* MXWTimeLineCell.m */; };
+		8556BBD628CB144B0081EA46 /* MXWTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBD528CB144B0081EA46 /* MXWTLModel.m */; };
+		8556BBD828CB169B0081EA46 /* time_line_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8556BBD728CB169B0081EA46 /* time_line_data.plist */; };
+		8556BBDB28CB1D7E0081EA46 /* MXWTLViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBDA28CB1D7E0081EA46 /* MXWTLViewModel.m */; };
+		8556BBDE28CB32520081EA46 /* MXWTLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBDD28CB32520081EA46 /* MXWTLCollectionView.m */; };
 		8571A7F6289C0AE600C01C68 /* MXWPaintBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */; };
 		8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F8289C0B3A00C01C68 /* MXWPaintBoardView.m */; };
 		8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7FB289C188400C01C68 /* MXWBezierPath.m */; };
@@ -34,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B1296A91C317B4C8D309AC4 /* Pods-MyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTest.release.xcconfig"; path = "Target Support Files/Pods-MyTest/Pods-MyTest.release.xcconfig"; sourceTree = "<group>"; };
 		8513B15F28A0D02600ACD2DF /* MXWSignalInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWSignalInstance.h; sourceTree = "<group>"; };
 		8513B16028A0D02600ACD2DF /* MXWSignalInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWSignalInstance.m; sourceTree = "<group>"; };
 		853229EC28993827008FA82E /* MyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +64,17 @@
 		8556BBC628C9A68C0081EA46 /* MXWAnmationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWAnmationVC.m; sourceTree = "<group>"; };
 		8556BBCA28CAE6D80081EA46 /* MXWCollecViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWCollecViewLayout.h; sourceTree = "<group>"; };
 		8556BBCB28CAE6D80081EA46 /* MXWCollecViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWCollecViewLayout.m; sourceTree = "<group>"; };
+		8556BBCE28CB12A40081EA46 /* MXWCusomTranTVCTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWCusomTranTVCTableViewController.h; sourceTree = "<group>"; };
+		8556BBCF28CB12A40081EA46 /* MXWCusomTranTVCTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWCusomTranTVCTableViewController.m; sourceTree = "<group>"; };
+		8556BBD128CB12E30081EA46 /* MXWTimeLineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWTimeLineCell.h; sourceTree = "<group>"; };
+		8556BBD228CB12E30081EA46 /* MXWTimeLineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTimeLineCell.m; sourceTree = "<group>"; };
+		8556BBD428CB144B0081EA46 /* MXWTLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWTLModel.h; sourceTree = "<group>"; };
+		8556BBD528CB144B0081EA46 /* MXWTLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTLModel.m; sourceTree = "<group>"; };
+		8556BBD728CB169B0081EA46 /* time_line_data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = time_line_data.plist; sourceTree = "<group>"; };
+		8556BBD928CB1D7E0081EA46 /* MXWTLViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWTLViewModel.h; sourceTree = "<group>"; };
+		8556BBDA28CB1D7E0081EA46 /* MXWTLViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTLViewModel.m; sourceTree = "<group>"; };
+		8556BBDC28CB32520081EA46 /* MXWTLCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWTLCollectionView.h; sourceTree = "<group>"; };
+		8556BBDD28CB32520081EA46 /* MXWTLCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTLCollectionView.m; sourceTree = "<group>"; };
 		8557E39B28AE22E700E03FC2 /* MXWPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPrefixHeader.pch; sourceTree = "<group>"; };
 		8571A7F4289C0AE600C01C68 /* MXWPaintBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPaintBoardViewController.h; sourceTree = "<group>"; };
 		8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPaintBoardViewController.m; sourceTree = "<group>"; };
@@ -80,6 +99,8 @@
 		85B1773728AD58BD00BA9554 /* MXWGuestureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWGuestureView.m; sourceTree = "<group>"; };
 		85CE495E289BEF9300912A96 /* MXWColockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWColockViewController.h; sourceTree = "<group>"; };
 		85CE495F289BEF9300912A96 /* MXWColockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWColockViewController.m; sourceTree = "<group>"; };
+		8926294C89CA9671B47188DA /* Pods-MyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTest.debug.xcconfig"; path = "Target Support Files/Pods-MyTest/Pods-MyTest.debug.xcconfig"; sourceTree = "<group>"; };
+		9AFB37B1541FCA48BBC5C4C6 /* libPods-MyTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,17 +108,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				311547D65692AF6E2AB865C3 /* libPods-MyTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1143F87E46428426631AF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AFB37B1541FCA48BBC5C4C6 /* libPods-MyTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		853229E328993827008FA82E = {
 			isa = PBXGroup;
 			children = (
 				853229EE28993827008FA82E /* MyTest */,
 				853229ED28993827008FA82E /* Products */,
+				E2ABF21F48900115FC8800ED /* Pods */,
+				1D1143F87E46428426631AF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +144,7 @@
 		853229EE28993827008FA82E /* MyTest */ = {
 			isa = PBXGroup;
 			children = (
+				8556BBCD28CB0BF60081EA46 /* CustomTransition */,
 				8556BBC928C9A6B30081EA46 /* CoreAnimation */,
 				853B13B028C1F6FD00C67E10 /* TransAnimation */,
 				85A88BCA28C10B4C00F195F9 /* PieChat */,
@@ -151,6 +184,24 @@
 				8556BBC628C9A68C0081EA46 /* MXWAnmationVC.m */,
 			);
 			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		8556BBCD28CB0BF60081EA46 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				8556BBCE28CB12A40081EA46 /* MXWCusomTranTVCTableViewController.h */,
+				8556BBCF28CB12A40081EA46 /* MXWCusomTranTVCTableViewController.m */,
+				8556BBD128CB12E30081EA46 /* MXWTimeLineCell.h */,
+				8556BBD228CB12E30081EA46 /* MXWTimeLineCell.m */,
+				8556BBDC28CB32520081EA46 /* MXWTLCollectionView.h */,
+				8556BBDD28CB32520081EA46 /* MXWTLCollectionView.m */,
+				8556BBD928CB1D7E0081EA46 /* MXWTLViewModel.h */,
+				8556BBDA28CB1D7E0081EA46 /* MXWTLViewModel.m */,
+				8556BBD428CB144B0081EA46 /* MXWTLModel.h */,
+				8556BBD528CB144B0081EA46 /* MXWTLModel.m */,
+				8556BBD728CB169B0081EA46 /* time_line_data.plist */,
+			);
+			path = CustomTransition;
 			sourceTree = "<group>";
 		};
 		8571A7F2289C078D00C01C68 /* Clock */ = {
@@ -225,6 +276,16 @@
 			path = signalInstance;
 			sourceTree = "<group>";
 		};
+		E2ABF21F48900115FC8800ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8926294C89CA9671B47188DA /* Pods-MyTest.debug.xcconfig */,
+				3B1296A91C317B4C8D309AC4 /* Pods-MyTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85322A052899382A008FA82E /* Build configuration list for PBXNativeTarget "MyTest" */;
 			buildPhases = (
+				CF88BB1072906056B726CC08 /* [CP] Check Pods Manifest.lock */,
 				853229E828993827008FA82E /* Sources */,
 				853229E928993827008FA82E /* Frameworks */,
 				853229EA28993827008FA82E /* Resources */,
@@ -284,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8556BBD828CB169B0081EA46 /* time_line_data.plist in Resources */,
 				853229FF2899382A008FA82E /* LaunchScreen.storyboard in Resources */,
 				85B1773128AD1E4500BA9554 /* item_data.plist in Resources */,
 				853229FC2899382A008FA82E /* Assets.xcassets in Resources */,
@@ -293,6 +356,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF88BB1072906056B726CC08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		853229E828993827008FA82E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -300,20 +388,25 @@
 			files = (
 				853229F128993827008FA82E /* AppDelegate.m in Sources */,
 				853B13AE28C1F6E800C67E10 /* MXWTransVC.m in Sources */,
+				8556BBD628CB144B0081EA46 /* MXWTLModel.m in Sources */,
 				85A88BD028C10C3800F195F9 /* MXWPieModel.m in Sources */,
+				8556BBD028CB12A40081EA46 /* MXWCusomTranTVCTableViewController.m in Sources */,
 				85B1772C28AD10F100BA9554 /* MXWMainCell.m in Sources */,
 				8571A7F6289C0AE600C01C68 /* MXWPaintBoardViewController.m in Sources */,
 				85B1772F28AD14DD00BA9554 /* MXWItemModel.m in Sources */,
+				8556BBDE28CB32520081EA46 /* MXWTLCollectionView.m in Sources */,
 				8513B16128A0D02600ACD2DF /* MXWSignalInstance.m in Sources */,
 				85322A022899382A008FA82E /* main.m in Sources */,
 				85A88BCD28C10B8000F195F9 /* MXWPieView.m in Sources */,
 				8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */,
 				8556BBC728C9A68C0081EA46 /* MXWAnmationVC.m in Sources */,
 				8556BBCC28CAE6D80081EA46 /* MXWCollecViewLayout.m in Sources */,
+				8556BBD328CB12E30081EA46 /* MXWTimeLineCell.m in Sources */,
 				8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */,
 				85A88BD328C1172200F195F9 /* MXWPieViewController.m in Sources */,
 				853B13AB28C120EB00C67E10 /* MXWColumnarView.m in Sources */,
 				85322A0D28993B0F008FA82E /* MyMainCollectionViewController.m in Sources */,
+				8556BBDB28CB1D7E0081EA46 /* MXWTLViewModel.m in Sources */,
 				85B1773428AD550D00BA9554 /* MXWGuestureUnlockVC.m in Sources */,
 				853229F428993827008FA82E /* SceneDelegate.m in Sources */,
 				85CE4960289BEF9300912A96 /* MXWColockViewController.m in Sources */,
@@ -455,6 +548,7 @@
 		};
 		85322A062899382A008FA82E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8926294C89CA9671B47188DA /* Pods-MyTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +584,7 @@
 		};
 		85322A072899382A008FA82E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B1296A91C317B4C8D309AC4 /* Pods-MyTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

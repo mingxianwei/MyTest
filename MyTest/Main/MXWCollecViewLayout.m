@@ -90,8 +90,8 @@
 }
 
 
+/** 这里需要实现。否则的话就无法滚动 */
 - (CGSize)collectionViewContentSize {
-
     return self.conternSize;
 }
 
