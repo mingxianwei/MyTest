@@ -50,21 +50,14 @@ static NSString * const reuseIdentifier = @"Cell";
      如果是通过xib创建 则需要使用xib来注册
      如果是自定义手写自定义类 则需要使用自定义类来注册。
      */
-    CGFloat width = [UIScreen mainScreen].bounds.size.width/2.0-5;
-    self.flowLayout.itemSize = CGSizeMake(width, width);
-    self.flowLayout.minimumLineSpacing = 10;
-    self.flowLayout.minimumInteritemSpacing = 10;
-    
+//    CGFloat width = [UIScreen mainScreen].bounds.size.width/2.0-5;
+//    self.flowLayout.itemSize = CGSizeMake(width, width);
+//    self.flowLayout.minimumLineSpacing = 10;
+//    self.flowLayout.minimumInteritemSpacing = 10;
+//    
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
 
-}
-
-
-#pragma mark -  segue Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
 }
 
 
@@ -73,6 +66,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return  1;
 }
+
+
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

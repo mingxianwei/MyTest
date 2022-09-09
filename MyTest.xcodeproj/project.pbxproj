@@ -18,6 +18,7 @@
 		853B13AB28C120EB00C67E10 /* MXWColumnarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 853B13AA28C120EB00C67E10 /* MXWColumnarView.m */; };
 		853B13AE28C1F6E800C67E10 /* MXWTransVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 853B13AD28C1F6E800C67E10 /* MXWTransVC.m */; };
 		8556BBC728C9A68C0081EA46 /* MXWAnmationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBC628C9A68C0081EA46 /* MXWAnmationVC.m */; };
+		8556BBCC28CAE6D80081EA46 /* MXWCollecViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBCB28CAE6D80081EA46 /* MXWCollecViewLayout.m */; };
 		8571A7F6289C0AE600C01C68 /* MXWPaintBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */; };
 		8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F8289C0B3A00C01C68 /* MXWPaintBoardView.m */; };
 		8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7FB289C188400C01C68 /* MXWBezierPath.m */; };
@@ -53,6 +54,8 @@
 		853B13AD28C1F6E800C67E10 /* MXWTransVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTransVC.m; sourceTree = "<group>"; };
 		8556BBC528C9A68C0081EA46 /* MXWAnmationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWAnmationVC.h; sourceTree = "<group>"; };
 		8556BBC628C9A68C0081EA46 /* MXWAnmationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWAnmationVC.m; sourceTree = "<group>"; };
+		8556BBCA28CAE6D80081EA46 /* MXWCollecViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWCollecViewLayout.h; sourceTree = "<group>"; };
+		8556BBCB28CAE6D80081EA46 /* MXWCollecViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWCollecViewLayout.m; sourceTree = "<group>"; };
 		8557E39B28AE22E700E03FC2 /* MXWPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPrefixHeader.pch; sourceTree = "<group>"; };
 		8571A7F4289C0AE600C01C68 /* MXWPaintBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPaintBoardViewController.h; sourceTree = "<group>"; };
 		8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPaintBoardViewController.m; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				85B1772E28AD14DD00BA9554 /* MXWItemModel.m */,
 				85B1772A28AD10F100BA9554 /* MXWMainCell.h */,
 				85B1772B28AD10F100BA9554 /* MXWMainCell.m */,
+				8556BBCA28CAE6D80081EA46 /* MXWCollecViewLayout.h */,
+				8556BBCB28CAE6D80081EA46 /* MXWCollecViewLayout.m */,
 				85322A0B28993B0F008FA82E /* MyMainCollectionViewController.h */,
 				85322A0C28993B0F008FA82E /* MyMainCollectionViewController.m */,
 			);
@@ -304,6 +309,7 @@
 				85A88BCD28C10B8000F195F9 /* MXWPieView.m in Sources */,
 				8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */,
 				8556BBC728C9A68C0081EA46 /* MXWAnmationVC.m in Sources */,
+				8556BBCC28CAE6D80081EA46 /* MXWCollecViewLayout.m in Sources */,
 				8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */,
 				85A88BD328C1172200F195F9 /* MXWPieViewController.m in Sources */,
 				853B13AB28C120EB00C67E10 /* MXWColumnarView.m in Sources */,
