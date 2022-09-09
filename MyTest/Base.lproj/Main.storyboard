@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J2e-1f-OPe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jiv-ha-DM7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -546,7 +546,7 @@
         <!--Cusom TranTVC Table View Controller-->
         <scene sceneID="zeH-P6-6JG">
             <objects>
-                <tableViewController id="J2e-1f-OPe" customClass="MXWCusomTranTVCTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="timeLine" id="J2e-1f-OPe" customClass="MXWCusomTranTVCTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="xgB-3c-zPk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -585,20 +585,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="史铁生：微笑着，去唱生活的歌谣。不要抱怨生活给予了太多的磨难，不必抱怨生命中有太多的曲折。大海如果失去了巨浪的翻滚，就会失去雄浑，沙漠如果失去了飞沙的狂舞，就会失去壮观，人生如果仅去求得两点一线的一帆风顺，生命也就失去了存在的魅力" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJq-UJ-k5h">
-                                            <rect key="frame" x="20" y="71" width="350" height="147"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="147" id="d6a-hs-XOD"/>
-                                            </constraints>
+                                            <rect key="frame" x="20" y="71" width="350" height="122"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PTM-of-T3A" customClass="MXWTLCollectionView">
-                                            <rect key="frame" x="20" y="226" width="350" height="206"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.3495251479" green="1" blue="0.33133459840000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z86-7D-DtB">
-                                                <size key="itemSize" width="90" height="96"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PTM-of-T3A" customClass="MXWTLCollectionView">
+                                            <rect key="frame" x="20" y="203" width="350" height="206"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="206" id="jjH-9G-1Tq"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z86-7D-DtB">
+                                                <size key="itemSize" width="0.0" height="0.0"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -611,7 +610,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="96"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-jd-wep">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-jd-wep">
                                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="96"/>
                                                             </imageView>
                                                         </subviews>
@@ -624,7 +623,7 @@
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="90" height="96"/>
                                                     <connections>
-                                                        <outlet property="imageVew" destination="PTE-jd-wep" id="rtW-am-1fQ"/>
+                                                        <outlet property="imageVew" destination="PTE-jd-wep" id="Xtv-n3-gIY"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -632,7 +631,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="CJq-UJ-k5h" firstAttribute="trailing" secondItem="6ev-DG-dyk" secondAttribute="trailingMargin" id="01c-jX-GHk"/>
+                                        <constraint firstItem="PTM-of-T3A" firstAttribute="top" secondItem="CJq-UJ-k5h" secondAttribute="bottom" constant="10" id="2Qg-C9-BhV"/>
                                         <constraint firstItem="xEa-NJ-waU" firstAttribute="leading" secondItem="6ev-DG-dyk" secondAttribute="leadingMargin" id="2Uf-k1-flv"/>
+                                        <constraint firstItem="PTM-of-T3A" firstAttribute="trailing" secondItem="6ev-DG-dyk" secondAttribute="trailingMargin" id="3v9-kd-1iy"/>
+                                        <constraint firstItem="PTM-of-T3A" firstAttribute="leading" secondItem="6ev-DG-dyk" secondAttribute="leadingMargin" id="DVA-4h-xMk"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cz5-Gp-pei" secondAttribute="trailing" constant="20" id="EKt-tE-4yu"/>
                                         <constraint firstItem="cz5-Gp-pei" firstAttribute="leading" secondItem="xEa-NJ-waU" secondAttribute="trailing" constant="6" id="L4u-yP-aZN"/>
                                         <constraint firstItem="CJq-UJ-k5h" firstAttribute="leading" secondItem="6ev-DG-dyk" secondAttribute="leadingMargin" id="L8m-Xt-1q4"/>
@@ -647,6 +649,7 @@
                                 <connections>
                                     <outlet property="contentLable" destination="CJq-UJ-k5h" id="2o0-cH-h5t"/>
                                     <outlet property="iconImageView" destination="xEa-NJ-waU" id="z92-tO-fp3"/>
+                                    <outlet property="imageCollectinViewHeighConstr" destination="jjH-9G-1Tq" id="k9r-v1-3wq"/>
                                     <outlet property="imageCollectionView" destination="PTM-of-T3A" id="y9g-su-Xs6"/>
                                     <outlet property="imageCollectionViewLayout" destination="z86-7D-DtB" id="AxE-px-HTK"/>
                                     <outlet property="nameLable" destination="Mt7-bi-lyH" id="ZON-bi-kBw"/>

@@ -26,6 +26,7 @@
 		8556BBD828CB169B0081EA46 /* time_line_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8556BBD728CB169B0081EA46 /* time_line_data.plist */; };
 		8556BBDB28CB1D7E0081EA46 /* MXWTLViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBDA28CB1D7E0081EA46 /* MXWTLViewModel.m */; };
 		8556BBDE28CB32520081EA46 /* MXWTLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBDD28CB32520081EA46 /* MXWTLCollectionView.m */; };
+		8556BBE328CB4D590081EA46 /* UIView+MXWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556BBE228CB4D590081EA46 /* UIView+MXWFrame.m */; };
 		8571A7F6289C0AE600C01C68 /* MXWPaintBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */; };
 		8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7F8289C0B3A00C01C68 /* MXWPaintBoardView.m */; };
 		8571A7FC289C188400C01C68 /* MXWBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571A7FB289C188400C01C68 /* MXWBezierPath.m */; };
@@ -75,6 +76,8 @@
 		8556BBDA28CB1D7E0081EA46 /* MXWTLViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTLViewModel.m; sourceTree = "<group>"; };
 		8556BBDC28CB32520081EA46 /* MXWTLCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWTLCollectionView.h; sourceTree = "<group>"; };
 		8556BBDD28CB32520081EA46 /* MXWTLCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWTLCollectionView.m; sourceTree = "<group>"; };
+		8556BBE128CB4D590081EA46 /* UIView+MXWFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MXWFrame.h"; sourceTree = "<group>"; };
+		8556BBE228CB4D590081EA46 /* UIView+MXWFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MXWFrame.m"; sourceTree = "<group>"; };
 		8557E39B28AE22E700E03FC2 /* MXWPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPrefixHeader.pch; sourceTree = "<group>"; };
 		8571A7F4289C0AE600C01C68 /* MXWPaintBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWPaintBoardViewController.h; sourceTree = "<group>"; };
 		8571A7F5289C0AE600C01C68 /* MXWPaintBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWPaintBoardViewController.m; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		853229EE28993827008FA82E /* MyTest */ = {
 			isa = PBXGroup;
 			children = (
+				8556BBDF28CB4A090081EA46 /* Catagroy */,
 				8556BBCD28CB0BF60081EA46 /* CustomTransition */,
 				8556BBC928C9A6B30081EA46 /* CoreAnimation */,
 				853B13B028C1F6FD00C67E10 /* TransAnimation */,
@@ -202,6 +206,15 @@
 				8556BBD728CB169B0081EA46 /* time_line_data.plist */,
 			);
 			path = CustomTransition;
+			sourceTree = "<group>";
+		};
+		8556BBDF28CB4A090081EA46 /* Catagroy */ = {
+			isa = PBXGroup;
+			children = (
+				8556BBE128CB4D590081EA46 /* UIView+MXWFrame.h */,
+				8556BBE228CB4D590081EA46 /* UIView+MXWFrame.m */,
+			);
+			path = Catagroy;
 			sourceTree = "<group>";
 		};
 		8571A7F2289C078D00C01C68 /* Clock */ = {
@@ -282,7 +295,6 @@
 				8926294C89CA9671B47188DA /* Pods-MyTest.debug.xcconfig */,
 				3B1296A91C317B4C8D309AC4 /* Pods-MyTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -397,6 +409,7 @@
 				8556BBDE28CB32520081EA46 /* MXWTLCollectionView.m in Sources */,
 				8513B16128A0D02600ACD2DF /* MXWSignalInstance.m in Sources */,
 				85322A022899382A008FA82E /* main.m in Sources */,
+				8556BBE328CB4D590081EA46 /* UIView+MXWFrame.m in Sources */,
 				85A88BCD28C10B8000F195F9 /* MXWPieView.m in Sources */,
 				8571A7F9289C0B3A00C01C68 /* MXWPaintBoardView.m in Sources */,
 				8556BBC728C9A68C0081EA46 /* MXWAnmationVC.m in Sources */,
@@ -555,7 +568,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 64KT797F3Y;
+				DEVELOPMENT_TEAM = N4X7L4FG52;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyTest/MXWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -591,7 +604,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 64KT797F3Y;
+				DEVELOPMENT_TEAM = N4X7L4FG52;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyTest/MXWPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;

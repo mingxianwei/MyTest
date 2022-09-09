@@ -23,9 +23,12 @@
 - (NSArray<MXWTLViewModel *> *)viewModelArray {
     if (_viewModelArray == nil) {
         _viewModelArray = [MXWTLViewModel getDemoDataArray];
-        /** 提前计算行高 并缓存 */
+        /** 提前计算行高 和 文本高度 并缓存 */
         [_viewModelArray enumerateObjectsUsingBlock:^(MXWTLViewModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            obj.textHeight = [MXWTimeLineCell caculateHeighWithString:obj.model.content];
             obj.cellHeight = [MXWTimeLineCell caculateRowHeighWithViewModel:obj];
+            
         }];
     }
     return _viewModelArray;
@@ -36,6 +39,10 @@
     [super viewDidLoad];
 }
 
+
+-(void)dealloc {
+    NSLog(@"我被释放了%@",self.description);
+}
 
 
 
@@ -53,6 +60,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MXWTimeLineCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.viewModel = self.viewModelArray[indexPath.row];
+    [cell setNeedsLayout];
     return cell;
 }
 

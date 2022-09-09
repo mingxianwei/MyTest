@@ -22,7 +22,6 @@
 //    _cellHeight = [self caculateHeightWithModel:model];
 //}
 
-
 //
 ///** 计算行高 */   行高的计算应该由Cell 自己来完成。然后存储到ViewModel 中
 //-(CGFloat)caculateHeightWithModel:(MXWTLModel *)model {

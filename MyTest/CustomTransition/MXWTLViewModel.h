@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 在设置mode 属性之后自动计算和缓存cell 行高 */
 @property (nonatomic, assign) CGFloat cellHeight;
 
+/** 缓存 计算文本高度 */
+@property (nonatomic, assign) CGFloat textHeight;
+
 @property (nonatomic, strong) MXWTLModel *model;
 
 

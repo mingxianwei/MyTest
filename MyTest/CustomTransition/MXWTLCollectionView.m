@@ -6,6 +6,7 @@
 //
 
 #import "MXWTLCollectionView.h"
+#import <SDWebImage/SDWebImage.h>
 
 
 @interface ImageCell ()
@@ -17,8 +18,20 @@
 
 @implementation ImageCell
 
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    
+    self.imageVew.layer.cornerRadius =3;
+    [self.imageVew.layer masksToBounds];
+    
+}
 
-
+- (void)setImageUrl:(NSString *)imageUrl {
+    _imageUrl = imageUrl;
+    
+    NSURL* url = [NSURL URLWithString:imageUrl];
+    [self.imageVew sd_setImageWithURL:url];
+}
 
 @end
 
