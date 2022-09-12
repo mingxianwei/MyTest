@@ -6,7 +6,8 @@ inhibit_all_warnings!
 target 'MyTest' do
   
   pod 'SDWebImage', '~> 5.13.2'
-  pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'SVProgressHUD', '~> 2.2.5'
+  
 
 end
 

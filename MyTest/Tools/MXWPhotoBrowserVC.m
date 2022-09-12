@@ -11,7 +11,7 @@
 #import "MXWPhotoBrowserVC.h"
 #import "MXWPotoBrowserCell.h"
 #import "UIView+MXWFrame.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "SVProgressHUD/SVProgressHUD.h"
 
 
 @interface MXWPhotoBrowserVC () <UICollectionViewDelegate,UICollectionViewDataSource>
@@ -145,14 +145,7 @@ static NSString * const cellResueID = @"photoBrowserCell";
     didFinishSavingWithError:(NSError *)error
   contextInfo:(void *)contextInfo{
     if (!error ) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.minShowTime = 3;
-        hud.label.text = @"保存成功";
-        hud.mode = MBProgressHUDModeText;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.25 * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        });
+        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
     }
 }
 
