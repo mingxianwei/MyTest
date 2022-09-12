@@ -35,11 +35,11 @@
 - (void)setDataForView {
     
     
-    MXWPieModel * model1 = [MXWPieModel mxwPieModelWithTittle:@"玉米" andValue:200 andColor:UIRandomColor];
-    MXWPieModel * model2 = [MXWPieModel mxwPieModelWithTittle:@"高粱" andValue:300 andColor:UIRandomColor];
-    MXWPieModel * model3 = [MXWPieModel mxwPieModelWithTittle:@"小麦" andValue:100 andColor:UIRandomColor];
-    MXWPieModel * model4 = [MXWPieModel mxwPieModelWithTittle:@"大豆" andValue:500 andColor:UIRandomColor];
-    MXWPieModel * model5 = [MXWPieModel mxwPieModelWithTittle:@"棉花" andValue:800 andColor:UIRandomColor];
+    MXWPieModel * model1 = [MXWPieModel mxwPieModelWithTittle:@"玉米" andValue:200 andColor:UIColorRandomColor];
+    MXWPieModel * model2 = [MXWPieModel mxwPieModelWithTittle:@"高粱" andValue:300 andColor:UIColorRandomColor];
+    MXWPieModel * model3 = [MXWPieModel mxwPieModelWithTittle:@"小麦" andValue:100 andColor:UIColorRandomColor];
+    MXWPieModel * model4 = [MXWPieModel mxwPieModelWithTittle:@"大豆" andValue:500 andColor:UIColorRandomColor];
+    MXWPieModel * model5 = [MXWPieModel mxwPieModelWithTittle:@"棉花" andValue:800 andColor:UIColorRandomColor];
     
     /** 设置饼状图数据 */
     self.pieView.startArc = -M_PI_2;

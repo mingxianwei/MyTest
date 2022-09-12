@@ -7,10 +7,20 @@
 
 #import <UIKit/UIKit.h>
 #import "MXWTLViewModel.h"
+#import "MXWPotoBrowserTransAnimat.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MXWTimeLineCell : UITableViewCell
+
+/** 选中图片 通知传值 */
+#define kSelectedImageNotifacation  @"kSelectedImageNotifacation"
+#define kSelectedImageNotifacationIndexPathKey @"kSelectedImageNotifacationIndexPathKey"
+#define kSelectedImageNotifacationUrlArrayKey  @"kSelectedImageNotifacationUrlArrayKey"
+
+
+
+
+@interface MXWTimeLineCell : UITableViewCell <MXWPhotoBrowserPresentedDelegate>
 
 
 @property (nonatomic, strong) MXWTLViewModel *viewModel;

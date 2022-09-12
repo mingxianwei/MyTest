@@ -8,11 +8,15 @@
 #import "MXWTimeLineCell.h"
 #import "MXWTLCollectionView.h"
 #import "UIView+MXWFrame.h"
+#import <SDWebImage/SDWebImage.h>
+
+#import "MXWPotoBrowserTransAnimat.h"
 
 
 #define kImageCountInRow  3
 #define kImageMargin      5
 #define kMaxShowImageCount 9
+
 
 
 @interface MXWTimeLineCell () <UICollectionViewDelegate,UICollectionViewDataSource>
@@ -117,6 +121,12 @@
    
     /** 设置文本视图的高度 */
     self.contentLable.height = self.viewModel.textHeight;
+    /** 设置 图片视图的Frame */
+    CGFloat width =  (ScreenWidth - 40 - (kImageCountInRow-1)* kImageMargin)/kImageCountInRow;
+    self.imageCollectionViewLayout.itemSize = CGSizeMake(width, width);
+    [self.imageCollectionView setNeedsLayout];
+    
+    [self.imageCollectionView reloadData];
     
 }
 
@@ -130,8 +140,7 @@
 
     /** 设置 图片视图的Frame */
     CGFloat width =  (ScreenWidth - 40 - (kImageCountInRow-1)* kImageMargin)/kImageCountInRow;
-    
-    self.imageCollectionViewLayout.itemSize = CGSizeMake(width, width);
+//    self.imageCollectionViewLayout.itemSize = CGSizeMake(width, width);
     
     CGFloat imageCount = self.viewModel.model.imageArray.count*1.0;
     imageCount =  imageCount > kMaxShowImageCount ? kMaxShowImageCount: imageCount ;
@@ -142,19 +151,17 @@
     } else {
         self.imageCollectinViewHeighConstr.constant = 0;
     }
-    
-    [self setNeedsLayout];
-    [self.imageCollectionView setNeedsLayout];
-    
-    [self.imageCollectionView reloadData];
-    
-   
 }
 
 
 #pragma mark - === CollectionViewDelegate ===
 
-
+/** 选中了图片 时候 需要 回传 数据 */
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    /** 选中之后就发送通知 */
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSelectedImageNotifacation object:self userInfo:@{kSelectedImageNotifacationIndexPathKey:indexPath,kSelectedImageNotifacationUrlArrayKey:self.viewModel.model.imageArray}];
+}
 
 
 
@@ -177,5 +184,47 @@
     cell.imageUrl = self.viewModel.model.imageArray[indexPath.row];
     return cell;
 }
+
+
+
+#pragma mark - === MXWPhotoBrowserPresentedDelegate ===
+
+/** 展示转场动画的图片视图 */
+- (UIImageView *)imageViewFromPresentAtIndexPath:(NSIndexPath *)indexPath {
+    ImageCell * cell = (ImageCell *)[self.imageCollectionView cellForItemAtIndexPath:indexPath];
+    NSString *stringUrl = cell.imageUrl;
+
+    UIImageView * imageView = [UIImageView new];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [imageView sd_setImageWithURL:[NSURL URLWithString:stringUrl]];
+    return imageView;
+}
+
+/** 专场动画图片的  初始位置 */
+-(CGRect)fromRectAtPresentingVCAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell * cell = [self.imageCollectionView cellForItemAtIndexPath:indexPath];
+    
+  CGRect fromRect =   [self.imageCollectionView convertRect:cell.frame toView:[UIApplication sharedApplication].delegate.window];
+    return  fromRect;
+}
+
+/** 专场动画的图片 最终位置 */
+-(CGRect)toRectAtPresentedVCAtIndexpath:(NSIndexPath *)indexPath{
+    NSString * url = self.viewModel.model.imageArray[indexPath.item];
+    SDImageCache* cache = [SDImageCache sharedImageCache]; //此方法会先从memory中取。
+    UIImage *image = [cache imageFromDiskCacheForKey:url];
+
+    CGFloat height = image.size.height* ScreenWidth/image.size.width;
+    
+    if (height > ScreenHeight) {
+        return CGRectMake(0, 0, ScreenWidth, height);
+    } else {
+        CGFloat y = (ScreenHeight - height)* 0.5;
+        return CGRectMake(0, y, ScreenWidth, height);
+    }
+    
+}
+
+
 
 @end

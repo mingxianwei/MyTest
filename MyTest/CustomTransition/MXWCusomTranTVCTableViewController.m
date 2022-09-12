@@ -8,10 +8,16 @@
 #import "MXWCusomTranTVCTableViewController.h"
 #import "MXWTimeLineCell.h"
 #import "MXWTLViewModel.h"
+#import "MXWPhotoBrowserVC.h"
+#import "MXWPotoBrowserTransAnimat.h"
 
 @interface MXWCusomTranTVCTableViewController ()
 
 @property (nonatomic, copy) NSArray<MXWTLViewModel *> *viewModelArray;
+
+
+@property (nonatomic,strong) MXWPotoBrowserTransAnimat * transAnimatorDelegate;
+
 
 @end
 
@@ -34,14 +40,48 @@
     return _viewModelArray;
 }
 
+- (MXWPotoBrowserTransAnimat *)transAnimatorDelegate {
+    if (_transAnimatorDelegate == nil) {
+        _transAnimatorDelegate = [MXWPotoBrowserTransAnimat new];
+    }
+    return _transAnimatorDelegate;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    /** 注册通知 */
+    
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:kSelectedImageNotifacation object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        
+        NSIndexPath * indexPath = note.userInfo[kSelectedImageNotifacationIndexPathKey];
+        NSArray * array = note.userInfo[kSelectedImageNotifacationUrlArrayKey];
+        
+        MXWPhotoBrowserVC *VC = [MXWPhotoBrowserVC new];
+        VC.indexPath = indexPath;
+        VC.imageUrlArray = array;
+        VC.modalPresentationStyle = UIModalPresentationCustom;
+        VC.transitioningDelegate = weakSelf.transAnimatorDelegate;
+        
+        weakSelf.transAnimatorDelegate.presentDelegate = (MXWTimeLineCell *)note.object;
+        weakSelf.transAnimatorDelegate.dismissDelegate = VC;
+        weakSelf.transAnimatorDelegate.indexPath = indexPath;
+        
+        /** 模态弹出视图 */
+        [weakSelf presentViewController:VC animated:YES completion:^{}];
+    
+    }];
+    
 }
 
 
 -(void)dealloc {
     NSLog(@"我被释放了%@",self.description);
+    
+    /** 通知要被释放 */
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
