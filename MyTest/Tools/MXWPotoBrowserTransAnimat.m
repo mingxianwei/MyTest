@@ -67,8 +67,6 @@
     CGRect fromRect = [self.presentDelegate fromRectAtPresentingVCAtIndexPath:self.indexPath];
     CGRect toRect = [self.presentDelegate toRectAtPresentedVCAtIndexpath:self.indexPath];
     
-    
-    
     UIView * toView =  [transitionContext viewForKey:UITransitionContextToViewKey];
     toView.hidden = YES;
     [transitionContext.containerView addSubview:toView];

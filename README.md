@@ -6,11 +6,12 @@
 
 <img src="./markdownImage/demo1.png" style="zoom:45%;" />
 
-#### Demo2  使用贝塞尔曲线实现  绘画板
+#### Demo2  使用贝塞尔曲线实现  绘画板 并使用Socket 同步绘画板
 
-<img src="./markdownImage/demo2.gif" alt="demo2" style="zoom:60%;" />
-
-
+<figure>
+<img src="./markdownImage/demo2.gif" width=200/>
+<img src="./markdownImage/Socket.gif" width=600/>
+</figure>
 
 #### Demo3 使用贝塞尔曲线 画出饼状图 柱状图
 

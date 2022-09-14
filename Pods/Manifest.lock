@@ -1,22 +1,26 @@
 PODS:
+  - CocoaAsyncSocket (7.6.5)
   - SDWebImage (5.13.2):
     - SDWebImage/Core (= 5.13.2)
   - SDWebImage/Core (5.13.2)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - CocoaAsyncSocket (~> 7.6.5)
   - SDWebImage (~> 5.13.2)
   - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
   trunk:
+    - CocoaAsyncSocket
     - SDWebImage
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 92b91b7717e58b50c11c2020ec6203c7a0ccde0e
+PODFILE CHECKSUM: 130c682e83f8a0fb2cb9c7e15afcc1ba5a4af293
 
 COCOAPODS: 1.11.3

@@ -98,7 +98,7 @@ static NSString * const reuseIdentifier = @"Cell";
     } else {
         
         VC.navigationItem.title = model.tittle;
-        [VC.navigationItem.leftBarButtonItem setTitle:@"返回"];
+//        [VC.navigationItem.leftBarButtonItem setTitle:@"返回"];
         [self.navigationController pushViewController:VC animated:YES];
     }
 

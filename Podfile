@@ -7,8 +7,7 @@ target 'MyTest' do
   
   pod 'SDWebImage', '~> 5.13.2'
   pod 'SVProgressHUD', '~> 2.2.5'
-  
-
+  pod 'CocoaAsyncSocket', '~> 7.6.5'
 end
 
 

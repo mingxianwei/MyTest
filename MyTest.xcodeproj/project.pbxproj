@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		311547D65692AF6E2AB865C3 /* libPods-MyTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFB37B1541FCA48BBC5C4C6 /* libPods-MyTest.a */; };
+		85082F7228D1731100632994 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 85082F7128D1731100632994 /* UIColor+Hex.m */; };
+		85082F7A28D1B7A000632994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85082F7928D1B7A000632994 /* main.m */; };
+		85082F8228D1B87E00632994 /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 85082F8128D1B87E00632994 /* Server.m */; };
+		85082F8428D1B9AB00632994 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 85082F8328D1B9AB00632994 /* GCDAsyncSocket.m */; };
 		8513B16128A0D02600ACD2DF /* MXWSignalInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8513B16028A0D02600ACD2DF /* MXWSignalInstance.m */; };
 		853229F128993827008FA82E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 853229F028993827008FA82E /* AppDelegate.m */; };
 		853229F428993827008FA82E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 853229F328993827008FA82E /* SceneDelegate.m */; };
@@ -44,8 +48,28 @@
 		85CE4960289BEF9300912A96 /* MXWColockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CE495F289BEF9300912A96 /* MXWColockViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		85082F7528D1B7A000632994 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3B1296A91C317B4C8D309AC4 /* Pods-MyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTest.release.xcconfig"; path = "Target Support Files/Pods-MyTest/Pods-MyTest.release.xcconfig"; sourceTree = "<group>"; };
+		85082F7028D1731100632994 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		85082F7128D1731100632994 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		85082F7728D1B7A000632994 /* Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Server; sourceTree = BUILT_PRODUCTS_DIR; };
+		85082F7928D1B7A000632994 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85082F7E28D1B83F00632994 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		85082F8028D1B87E00632994 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		85082F8128D1B87E00632994 /* Server.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
+		85082F8328D1B9AB00632994 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		8513B15F28A0D02600ACD2DF /* MXWSignalInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWSignalInstance.h; sourceTree = "<group>"; };
 		8513B16028A0D02600ACD2DF /* MXWSignalInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXWSignalInstance.m; sourceTree = "<group>"; };
 		853229EC28993827008FA82E /* MyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +141,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		85082F7428D1B7A000632994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		853229E928993827008FA82E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,10 +167,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		85082F7828D1B7A000632994 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				85082F7928D1B7A000632994 /* main.m */,
+				85082F8028D1B87E00632994 /* Server.h */,
+				85082F8128D1B87E00632994 /* Server.m */,
+				85082F7E28D1B83F00632994 /* GCDAsyncSocket.h */,
+				85082F8328D1B9AB00632994 /* GCDAsyncSocket.m */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		853229E328993827008FA82E = {
 			isa = PBXGroup;
 			children = (
 				853229EE28993827008FA82E /* MyTest */,
+				85082F7828D1B7A000632994 /* Server */,
 				853229ED28993827008FA82E /* Products */,
 				E2ABF21F48900115FC8800ED /* Pods */,
 				1D1143F87E46428426631AF6 /* Frameworks */,
@@ -150,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				853229EC28993827008FA82E /* MyTest.app */,
+				85082F7728D1B7A000632994 /* Server */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +270,8 @@
 			children = (
 				8556BBE128CB4D590081EA46 /* UIView+MXWFrame.h */,
 				8556BBE228CB4D590081EA46 /* UIView+MXWFrame.m */,
+				85082F7028D1731100632994 /* UIColor+Hex.h */,
+				85082F7128D1731100632994 /* UIColor+Hex.m */,
 			);
 			path = Catagroy;
 			sourceTree = "<group>";
@@ -326,6 +373,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		85082F7628D1B7A000632994 /* Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85082F7B28D1B7A000632994 /* Build configuration list for PBXNativeTarget "Server" */;
+			buildPhases = (
+				85082F7328D1B7A000632994 /* Sources */,
+				85082F7428D1B7A000632994 /* Frameworks */,
+				85082F7528D1B7A000632994 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Server;
+			productName = Server;
+			productReference = 85082F7728D1B7A000632994 /* Server */;
+			productType = "com.apple.product-type.tool";
+		};
 		853229EB28993827008FA82E /* MyTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85322A052899382A008FA82E /* Build configuration list for PBXNativeTarget "MyTest" */;
@@ -355,6 +419,9 @@
 				CLASSPREFIX = MXW;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					85082F7628D1B7A000632994 = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					853229EB28993827008FA82E = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
@@ -375,6 +442,7 @@
 			projectRoot = "";
 			targets = (
 				853229EB28993827008FA82E /* MyTest */,
+				85082F7628D1B7A000632994 /* Server */,
 			);
 		};
 /* End PBXProject section */
@@ -437,11 +505,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		85082F7328D1B7A000632994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85082F8428D1B9AB00632994 /* GCDAsyncSocket.m in Sources */,
+				85082F8228D1B87E00632994 /* Server.m in Sources */,
+				85082F7A28D1B7A000632994 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		853229E828993827008FA82E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				853229F128993827008FA82E /* AppDelegate.m in Sources */,
+				85082F7228D1731100632994 /* UIColor+Hex.m in Sources */,
 				853B13AE28C1F6E800C67E10 /* MXWTransVC.m in Sources */,
 				8556BBD628CB144B0081EA46 /* MXWTLModel.m in Sources */,
 				85A88BD028C10C3800F195F9 /* MXWPieModel.m in Sources */,
@@ -495,6 +574,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		85082F7C28D1B7A000632994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 64KT797F3Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Server/\"";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		85082F7D28D1B7A000632994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 64KT797F3Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Server/\"";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		85322A032899382A008FA82E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -689,6 +796,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		85082F7B28D1B7A000632994 /* Build configuration list for PBXNativeTarget "Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85082F7C28D1B7A000632994 /* Debug */,
+				85082F7D28D1B7A000632994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		853229E728993827008FA82E /* Build configuration list for PBXProject "MyTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

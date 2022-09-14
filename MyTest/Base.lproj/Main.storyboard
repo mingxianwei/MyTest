@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jiv-ha-DM7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jiv-ha-DM7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -86,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="1448" y="-291"/>
         </scene>
-        <!--Paint Board View Controller-->
+        <!--绘画板-->
         <scene sceneID="aW0-qP-Smd">
             <objects>
                 <viewController storyboardIdentifier="paintBoard" id="3pO-SV-UYS" customClass="MXWPaintBoardViewController" sceneMemberID="viewController">
@@ -95,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1r-vc-A9G">
-                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="44"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EZe-2Y-8n8"/>
@@ -106,18 +107,18 @@
                                             <action selector="clearBtnClick:" destination="3pO-SV-UYS" id="58z-we-Zc9"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="回退" id="bfd-R7-8Fc">
-                                        <connections>
-                                            <action selector="rebackBtnClick:" destination="3pO-SV-UYS" id="y9Q-vS-W2F"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem title="橡皮擦" id="oKd-el-IrJ">
                                         <connections>
                                             <action selector="eraserBtnClick:" destination="3pO-SV-UYS" id="jnf-pn-tQZ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="共享" id="pxp-TD-Eam">
+                                        <connections>
+                                            <action selector="shareMyPaint:" destination="3pO-SV-UYS" id="1eF-xq-i5q"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vcp-af-yFg"/>
-                                    <barButtonItem title="保存" id="K4e-kY-pIU">
+                                    <barButtonItem title="保存图片" style="plain" id="K4e-kY-pIU">
                                         <connections>
                                             <action selector="saveBtnClick:" destination="3pO-SV-UYS" id="zcK-mZ-OGn"/>
                                         </connections>
@@ -183,7 +184,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-Lp-pel" customClass="MXWPaintBoardView">
-                                <rect key="frame" x="0.0" y="88" width="390" height="602"/>
+                                <rect key="frame" x="0.0" y="135" width="390" height="555"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
                         </subviews>
@@ -202,7 +203,14 @@
                             <constraint firstItem="Z1r-vc-A9G" firstAttribute="top" secondItem="zOh-xS-2bI" secondAttribute="top" id="vmv-5X-bEG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gtU-OU-r88"/>
+                    <navigationItem key="navigationItem" title="绘画板" largeTitleDisplayMode="always" id="gtU-OU-r88">
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="链接到8888" id="2m4-5s-sYh">
+                            <connections>
+                                <action selector="conncectSocket:" destination="3pO-SV-UYS" id="PWo-1L-kPc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="myPaintBoardView" destination="2bX-Lp-pel" id="qRA-zG-lTb"/>
                     </connections>
@@ -225,7 +233,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfG-ak-Qr1">
-                                <rect key="frame" x="346.66666666666669" y="74" width="23.333333333333314" height="23.333333333333329"/>
+                                <rect key="frame" x="346.66666666666669" y="77" width="23.333333333333314" height="23.333333333333329"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="guanbi"/>
                                 <connections>
@@ -233,7 +241,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入手势密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1y-FN-lu5">
-                                <rect key="frame" x="0.0" y="147.33333333333334" width="390" height="55"/>
+                                <rect key="frame" x="0.0" y="150.33333333333334" width="390" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="cyD-aG-kn1"/>
                                 </constraints>
@@ -329,7 +337,7 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Ow-bT-1Xp">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -350,7 +358,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Twj-Gi-iU6">
-                                <rect key="frame" x="20" y="244" width="350" height="516"/>
+                                <rect key="frame" x="20" y="247" width="350" height="513"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="bDB-mA-M1B" appends="YES" id="wTT-Iz-bra"/>
@@ -481,7 +489,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-uI-hNi">
-                                <rect key="frame" x="87" y="103" width="216" height="128"/>
+                                <rect key="frame" x="87" y="106" width="216" height="128"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -553,7 +561,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="443" id="d36-dB-XHY" customClass="MXWTimeLineCell">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="443"/>
+                                <rect key="frame" x="0.0" y="50" width="390" height="443"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d36-dB-XHY" id="6ev-DG-dyk">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="443"/>

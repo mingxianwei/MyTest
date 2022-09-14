@@ -7,9 +7,24 @@
 
 #import "MXWPaintBoardViewController.h"
 #import "MXWPaintBoardView.h"
+#import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
-@interface MXWPaintBoardViewController ()
+@interface MXWPaintBoardViewController () <GCDAsyncSocketDelegate>
+
 @property (weak, nonatomic) IBOutlet MXWPaintBoardView *myPaintBoardView;
+
+/*!
+ @property 客户端socket
+ @abstract 客户端socket
+ */
+@property (nonatomic, strong) GCDAsyncSocket *clientSocket;
+/*!
+ @property 接受到socket数据
+ @abstract 接受到socket数据（针对图片数据流的拼接）
+ */
+@property (nonatomic, strong) NSMutableData *socketReadData;
+
+
 
 
 
@@ -17,20 +32,100 @@
 
 @implementation MXWPaintBoardViewController
 
+#pragma mark - 懒加载
+/*!
+ @method 懒加载
+ @abstract 初始化socket传输的二进制数据
+ @result 初始化的二进制数据
+ */
+- (NSMutableData *)socketReadData {
+    if (!_socketReadData) {
+        _socketReadData = [NSMutableData data];
+    }
+    return _socketReadData;
+}
+/*!
+ @method 懒加载
+ @abstract 初始化客户端socket对象
+ @result 客户端socket对象
+ */
+- (GCDAsyncSocket *)clientSocket {
+    if (!_clientSocket) {
+        _clientSocket = [[GCDAsyncSocket alloc]initWithDelegate:self
+                                                delegateQueue:dispatch_get_main_queue()];
+    }
+    return _clientSocket;
+}
+
+
+#pragma mark - === LifeClicle ===
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"绘画板";
-    [self.navigationItem.leftBarButtonItem setTitle:@"返回"];
+
     self.myPaintBoardView.lineColor = [UIColor blackColor];
     self.myPaintBoardView.lineWith = 10;
     [self grenBtnClick:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.clientSocket disconnect];
+}
+
+
+#pragma mark - === IBAction ===
+
+- (IBAction)conncectSocket:(UIBarButtonItem *)sender {
+    // 2.连接服务器
+    NSError *error = nil;
+    
+    if(sender.tag == 1){
+        [self.clientSocket connectToHost:@"127.0.0.1"
+                                  onPort:8888
+                                   error:&error];
+        if (error) {
+            NSLog(@"error%@", error);
+            sender.tag = 1;
+            sender.title = @"链接到8888";
+        } else {
+            sender.tag = 2;
+            sender.title = @"断开连接";
+            NSLog(@"链接成功");
+        }
+    } else {
+        [self.clientSocket disconnectAfterReadingAndWriting];
+        sender.tag = 1;
+        sender.title = @"链接到8888";
+    }
+}
+
+
+/** 发送数据 */
+- (IBAction)shareMyPaint:(id)sender {
+    
+    NSArray *dataArray = [self.myPaintBoardView arrayWithMXWBezierPathArray];
+    if(dataArray.count <=0 ){
+        return;
+    }
+    
+    NSData *sendData = [NSJSONSerialization
+                        dataWithJSONObject:dataArray
+                        options:NSJSONWritingPrettyPrinted
+                        error:nil];
+    
+    
+    [self.clientSocket writeData:sendData
+                     withTimeout:-1
+                             tag:5555];
     
 }
 
 
 
+
+
 - (IBAction)sliderValueChanged:(UISlider *)sender{
-    
     self.myPaintBoardView.lineWith = sender.value;
 }
 
@@ -70,15 +165,50 @@
     [self.myPaintBoardView saveToImage];
 }
 
+#pragma mark - === GCDAsyncSocketDelegate ===
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/** 连接到主机  需要 读数据 */
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
+    NSLog(@"ConnectToHost");
+    [self.clientSocket readDataWithTimeout:-1
+                                       tag:11111];
 }
-*/
+
+/*!
+ @method  socket与服务器断开连接
+ @abstract 断开服务器连接回调方法
+ @param sock 客服端socket
+ @param err 错误
+ */
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+    self.navigationItem.rightBarButtonItem.tag = 1;
+    self.navigationItem.rightBarButtonItem.title = @"链接8888";
+    
+    NSLog(@"Disconnect");
+    NSLog(@"socketDidDisconnecterr%@", err);
+}
+
+
+/** 从服务器读取数据 */
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+    NSLog(@"didReadData");
+    
+    NSArray *tempArray = [NSJSONSerialization JSONObjectWithData:data
+                                                            options:kNilOptions
+                                                              error:nil];
+    NSMutableArray * array = [NSMutableArray arrayWithCapacity:tempArray.count];
+    [tempArray enumerateObjectsUsingBlock:^(NSDictionary * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        MXWBezierPath * path = [MXWBezierPath bezierPathFromDic:obj];
+        if(path != nil){
+            [array addObject:path];
+        }
+    }];
+    [self.myPaintBoardView setPathwithArry:array];
+    
+    [self.clientSocket readDataWithTimeout:-1
+                          tag:1111];
+}
+
+
 
 @end

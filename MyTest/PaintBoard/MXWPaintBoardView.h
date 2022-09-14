@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MXWBezierPath.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) CGFloat lineWith;
 @property (nonatomic,strong) UIColor * lineColor;
 
+
 - (void)reback;
 
 - (void)clear;
@@ -21,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)eraser;
 
 - (void)saveToImage;
+
+- (void)setPathwithArry:(NSArray<MXWBezierPath *> * _Nonnull)pathArry;
+/** 给当前画板的每一条路径转换成字典之后 加入到数组中 */
+- (NSArray *)arrayWithMXWBezierPathArray;
 
 @end
 

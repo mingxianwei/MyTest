@@ -6,7 +6,7 @@
 //
 
 #import "MXWPaintBoardView.h"
-#import "MXWBezierPath.h"
+
 
 @interface MXWPaintBoardView ()
 
@@ -25,6 +25,10 @@
     return _pathArry;
 }
 
+- (void)setPathwithArry:(NSArray<MXWBezierPath *> * _Nonnull)pathArry {
+    self.pathArry = [pathArry mutableCopy];
+    [self setNeedsDisplay];
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -35,12 +39,13 @@
         [path setLineCapStyle:kCGLineCapRound];
         [path setLineJoinStyle:kCGLineJoinRound];
         [path.color set];
+//        [path dicFromBezierPath];
         [path stroke];
     }
     
 }
 
-
+#pragma mark - === Touch ===
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     //1. 获取到触摸的点
     
@@ -68,6 +73,23 @@
     
 }
 
+#pragma mark - === SEL ===
+
+/** 将曲线转换成字典数组 */
+- (NSArray *)arrayWithMXWBezierPathArray {
+    
+    if(self.pathArry.count <= 0) {
+        return nil;
+    }
+    
+    NSMutableArray * array = [NSMutableArray arrayWithCapacity:self.pathArry.count];
+    for (MXWBezierPath *path in self.pathArry) {
+        NSDictionary * dic = [path dicFromBezierPath];
+        [array addObject:dic];
+    }
+    return array;
+}
+
 
 - (void)reback {
     [self.pathArry removeLastObject];
@@ -82,7 +104,6 @@
 - (void)eraser {
     self.lineColor = self.backgroundColor;
 }
-
 
 - (void)saveToImage {
     

@@ -24,10 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"饼状图柱状图";
-    [self.navigationItem.leftBarButtonItem setTitle:@"返回"];
-    
-    
+//    self.navigationItem.title = @"饼状图柱状图";
+//    [self.navigationItem.leftBarButtonItem setTitle:@"返回"];
+//    
+//    
     [self setDataForView];
 }
 
