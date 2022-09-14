@@ -13,6 +13,13 @@
 
 @implementation MXWBezierPath
 
+
+static NSString * colorKey = @"color";
+static NSString * lineWidthKey = @"width";
+static NSString * pointsDicKey = @"points";
+static NSString * moveTopointsArraykey = @"moveToPoints";
+
+/** 根据字典初始化 BezierPath */
 +(MXWBezierPath *)bezierPathFromDic:(NSDictionary *)dic{
     MXWBezierPath * path = [MXWBezierPath new];
     path.color = [UIColor colorWithHexString:dic[@"color"]];
@@ -27,7 +34,6 @@
         CGFloat x = [pointdic[@"x"] floatValue];
         CGFloat y = [pointdic[@"y"] floatValue];
         [path moveToPoint:CGPointMake(x, y)];
-        
         NSArray * pointArray = pointDic[@"addLinetoPoints"];
         for (int i= 0; i< pointArray.count; i++) {
             NSDictionary *dic = pointArray[i];
@@ -39,50 +45,19 @@
     }
 }
 
-
+/** 将贝塞尔曲线转化成字典 */
 -(NSDictionary *)dicFromBezierPath{
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     NSString * colorString = [self.color hexadecimalFromUIColor];
     dic[@"color"] = colorString;
     dic[@"width"] = @(self.lineWidth);
-//    dic[@"points"] = [self points];
-//    NSMutableArray * pointArray = [NSMutableArray array];
-//    for (NSValue *value in [self path] ) {
-//        CGPoint point = value.CGPointValue;
-//        [pointArray addObject:@{@"x":@(point.x),@"y":@(point.y)}];
-//    }
     dic[@"points"] = [self pathDic];
     return  [dic copy];
 }
 
 
 
-void getPointsFromBezier(void *info,const CGPathElement *element){
-
-    NSMutableDictionary *bezierPoints = (__bridge NSMutableDictionary *)info;
-
-    CGPathElementType type = element->type;
-    CGPoint points = *element->points;
-    if (type == kCGPathElementMoveToPoint ) {
-        bezierPoints[@"moveToPoints"] =  @{@"x":@(points.x),@"y":@(points.y)};
-    } else if (type == kCGPathElementAddLineToPoint) {
-        NSMutableArray * array =  bezierPoints[@"addLinetoPoints"] ;
-        [array addObject:@{@"x":@(points.x),@"y":@(points.y)}];
-    }
-
-//
-//
-//    if (type != kCGPathElementCloseSubpath) {
-//        [bezierPoints addObject:VALUE(0)];
-//        if ((type != kCGPathElementAddLineToPoint) && (type != kCGPathElementMoveToPoint)) {
-//            [bezierPoints addObject:VALUE(1)];
-//        }
-//    }
-//    if (type == kCGPathElementAddCurveToPoint) {
-//        [bezierPoints addObject:VALUE(2)];
-//    }
-}
-
+/** 将 贝塞尔曲线转化成字典  最重要的是调用CGPathApply 方法 */
 - (NSDictionary *)pathDic{
     NSMutableDictionary *path = [NSMutableDictionary dictionary];
     path[@"addLinetoPoints"] = [NSMutableArray array];
@@ -92,7 +67,18 @@ void getPointsFromBezier(void *info,const CGPathElement *element){
     return [path copy];
 }
 
-
+/** 根据路径 拿到路径的点  */
+void getPointsFromBezier(void *info,const CGPathElement *element){
+    NSMutableDictionary *bezierPoints = (__bridge NSMutableDictionary *)info;
+    CGPathElementType type = element->type;
+    CGPoint points = *element->points;
+    if (type == kCGPathElementMoveToPoint ) {
+        bezierPoints[@"moveToPoints"] =  @{@"x":@(points.x),@"y":@(points.y)};
+    } else if (type == kCGPathElementAddLineToPoint) {
+        NSMutableArray * array =  bezierPoints[@"addLinetoPoints"] ;
+        [array addObject:@{@"x":@(points.x),@"y":@(points.y)}];
+    }
+}
 
 
 

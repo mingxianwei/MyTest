@@ -18,14 +18,6 @@
  @abstract 客户端socket
  */
 @property (nonatomic, strong) GCDAsyncSocket *clientSocket;
-/*!
- @property 接受到socket数据
- @abstract 接受到socket数据（针对图片数据流的拼接）
- */
-@property (nonatomic, strong) NSMutableData *socketReadData;
-
-
-
 
 
 @end
@@ -33,17 +25,7 @@
 @implementation MXWPaintBoardViewController
 
 #pragma mark - 懒加载
-/*!
- @method 懒加载
- @abstract 初始化socket传输的二进制数据
- @result 初始化的二进制数据
- */
-- (NSMutableData *)socketReadData {
-    if (!_socketReadData) {
-        _socketReadData = [NSMutableData data];
-    }
-    return _socketReadData;
-}
+
 /*!
  @method 懒加载
  @abstract 初始化客户端socket对象
@@ -205,6 +187,8 @@
     }];
     [self.myPaintBoardView setPathwithArry:array];
     
+    
+    /** 这里千万不要忘记。 拿到数据之后 要继续 拿数据 这样才会持续的激活 代理 */
     [self.clientSocket readDataWithTimeout:-1
                           tag:1111];
 }

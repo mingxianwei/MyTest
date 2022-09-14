@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MXWBezierPath : UIBezierPath
+
 @property (nonatomic,strong) UIColor * color;
 
 
@@ -24,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(NSDictionary *)dicFromBezierPath;
 
+/**
+ * 将字典转化成 贝塞尔曲线对象
+ */
 +(MXWBezierPath *)bezierPathFromDic:(NSDictionary *)dic;
 
 @end
