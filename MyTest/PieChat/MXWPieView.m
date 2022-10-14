@@ -45,11 +45,8 @@
     [self.valueArray enumerateObjectsUsingBlock:^(MXWPieModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat endArc = startArc + (2 * M_PI *obj.value)/self.totalValue;
         UIBezierPath * path = [UIBezierPath bezierPathWithArcCenter:point radius:r startAngle:startArc endAngle:endArc clockwise:1];
-       
         MXWPieModel * model = self.valueArray[idx];
-
         [model.color set];
-
         [path addLineToPoint:point];
 
         // 设置路径为填充

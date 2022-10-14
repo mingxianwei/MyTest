@@ -36,11 +36,9 @@
  */
 - (void)startServer {
     
-    self.serverSocket = [[GCDAsyncSocket alloc]initWithDelegate:self
-                                                  delegateQueue:dispatch_get_main_queue()];
+    self.serverSocket = [[GCDAsyncSocket alloc]initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *error = nil;
-    [self.serverSocket acceptOnPort:8888
-                              error:&error];
+    [self.serverSocket acceptOnPort:8888 error:&error];
     if (error) {
         NSLog(@"服务开启失败");
     } else {
@@ -56,8 +54,7 @@
  */
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
     [self.clientSocketArray addObject:newSocket];
-    [newSocket readDataWithTimeout:-1
-                               tag:self.clientSocketArray.count];
+    [newSocket readDataWithTimeout:-1 tag:self.clientSocketArray.count];
 }
 /*!
  @method  收到socket端数据的回调
@@ -67,13 +64,10 @@
     // 直接进行转发数据
     for (GCDAsyncSocket *clientSocket in self.clientSocketArray) {
         if (sock != clientSocket) {
-            [clientSocket writeData:data
-                withTimeout:-1
-                        tag:0];
+            [clientSocket writeData:data withTimeout:-1 tag:0];
         }
     }
-    [sock readDataWithTimeout:-1
-                          tag:0];
+    [sock readDataWithTimeout:-1 tag:0];
     
 }
 

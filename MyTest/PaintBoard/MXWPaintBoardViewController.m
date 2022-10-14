@@ -165,7 +165,6 @@
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     self.navigationItem.rightBarButtonItem.tag = 1;
     self.navigationItem.rightBarButtonItem.title = @"链接8888";
-    
     NSLog(@"Disconnect");
     NSLog(@"socketDidDisconnecterr%@", err);
 }
@@ -173,8 +172,7 @@
 
 /** 从服务器读取数据 */
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    NSLog(@"didReadData");
-    
+
     NSArray *tempArray = [NSJSONSerialization JSONObjectWithData:data
                                                             options:kNilOptions
                                                               error:nil];

@@ -14,8 +14,6 @@ int main(int argc, const char * argv[]) {
         [server startServer];
         // 开启主运行循环
         [[NSRunLoop mainRunLoop] run];
-        
-        
     }
     return 0;
 }
